@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    width: 100%;
+}
+#app {
+    width: 80%;
+    margin:  15px auto;
+}
+.header {
+    width: 100%;
+    /* border: 1px solid red; */
+    height: 100px;
+}
+.you, .monster {
+    width: 50%;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;  
+}
+
+
+.healthBar {
+    width: 80%;
+    height:40px;
+    background-color: #eee;
+    margin: 15px auto;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 40px;
+    transition: width 500ms;
+}
+
+.control, .log {
+    width: 100%;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 6px #ccc;
+    text-align: center;
+}
+button {
+    font-size: 20px;
+    background-color: #eee;
+    padding: 12px;
+    box-shadow: 0 1px 1px black;
+    margin: 10px;
+}
+.start-game {
+    background-color:#66FF66;
+}
+.start-game:hover {
+    background-color:#66DD00;
+}
+.attack {
+    background-color:#FF3333;    
+}
+
+.attack:hover {
+    background-color:#FF0000;    
+}
+.special-attack {
+    background-color:#FFFF00;    
+}
+.special-attack:hover {
+    background-color:#FFFF77 ;    
+}
+.heal {
+    background-color:#33FF33;    
+}
+.heal:hover {
+    background-color:#00DD00;    
+}
+.give-up {
+    background-color:#ddd;    
+}
+.give-up:hover {
+    background-color:#CCCCFF;    
+}
+
+.log ul{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.log ul li{
+    margin: 5px;
+    height: 20px;
+    line-height: 20px;
+}
+.log ul .player-log {
+    color: blue;
+    background-color: #c3caf1;
+}
+.log ul .monster-log {
+    color: red;
+    background-color: #ffc0c1;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="app">
+        <section class="header">
+            <div class="you">
+                <div>YOU</div>
+                <div class="healthBar">
+                    <div class="healthBar" style="background-color: green;margin: 0;color: #bbb"
+                    :style = "{width: playerHealth + '%'}">
+                       {{playerHealth}}
+                    </div>
+                </div>
+            </div>
+            <div class="monster">
+                <div>MONSTER</div>
+                <div class="healthBar">
+                    <div class="healthBar" style="background-color: green;margin: 0;color: #bbb"
+                    :style = "{width: playerHealth + '%'}"> <!--利用行间样式将样式中设置的血量覆盖，动态显示-->
+                         {{monsterHealth}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="control" v-if = "!gameIsRunning">
+            <div class="start">
+                <button class="start-game" @click = "startGame">START NEW GAME</button>
+            </div>
+        </section>     
+        <section class="control" v-else> <!--v-else会找离他最近的v-if，取反-->
+            <div>
+                <button class="attack" @click = "attack">ATTACK</button>
+                <button class="special-attack" @click = "specialAttack">SPECIAL ATTACK</button>
+                <button class="heal" @click = "heal">HEAL</button>
+                <button class="give-up" @click = "giveUp">GIVE UP</button>
+            </div>
+            
+        </section>
+        <section class="log"  v-if = "logs.length">
+            <div>
+                <ul>
+                    <li v-for = "log in logs" :class= "{'player-log': log.isPlayer,'monster-log': !log.isPlayer}">{{log.damage}}</li>         
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
